@@ -1,0 +1,16 @@
+############################################
+#
+#  Ensighten Interview Coding Problem
+#
+#  Find the longest string that can be made
+#  by combining the strings in the list
+#
+############################################
+
+I understand this problem as finding shortest common substring between two strings
+selected from list and the substring should be the suffix of one string, but also
+the prefix of the other string. From this assumption, select two fragment strings
+from list with all the possible permutation.
+
+7/15/2015
+Steve Park
