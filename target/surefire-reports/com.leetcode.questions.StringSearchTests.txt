@@ -1,4 +1,0 @@
--------------------------------------------------------------------------------
-Test set: com.leetcode.questions.StringSearchTests
--------------------------------------------------------------------------------
-Tests run: 5, Failures: 0, Errors: 0, Skipped: 1, Time elapsed: 0.002 sec - in com.leetcode.questions.StringSearchTests
