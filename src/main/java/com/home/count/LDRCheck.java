@@ -39,7 +39,7 @@ public class LDRCheck {
 	}
 
 	public static void main(String[] args) {
-		String folderPath = "/Users/spark/Desktop/Textura/Fransen_Pittman_Compliance_Import_INCMGMT-5216";
+		String folderPath = "./src/main/resources/Fransen_Pittman_Compliance_Import_INCMGMT-5216";
 		LDRCheck ldrCheck = new LDRCheck();
 		ldrCheck.getAllFilesUnderfolder(folderPath)
 				.filter(fileName -> !fileName.equalsIgnoreCase(".DS_Store"))
