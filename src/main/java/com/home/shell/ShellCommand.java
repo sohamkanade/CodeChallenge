@@ -46,6 +46,7 @@ public class ShellCommand {
 	public void openBrowser() {
 		Runtime runtime = Runtime.getRuntime();
 		try {
+			@SuppressWarnings("unused")
 			Process process = runtime.exec("cmd /c start \"open browser\" /max iexplore.exe");
 			System.out.println("finished!");
 		} catch (IOException e) {
