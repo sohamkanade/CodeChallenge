@@ -1,0 +1,83 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
+<title>Closure Test</title>
+<script src="http://code.jquery.com/jquery-1.11.3.min.js"></script>
+<script type="text/javascript">
+	$(document).ready(function() {
+
+		function showName(firstName, lastName) {
+			var nameIntro = "Yourname is ";
+			function makeFullName() {
+				return nameIntro + firstName + " " + lastName;
+			}
+			return makeFullName();
+		}
+		var result = showName("Michael", "Jackson");
+
+		function scopeTest() {
+			/* consider this simple for loop
+			    to be the "block" that we were
+			    talking about earlier
+			 */
+			var x = 2;
+			if (x == 2) {
+				var y = 15;
+				for (var i = 0; i <= 5; i++) {
+					var inFor = i;
+				}
+			}
+			alert(inFor);        // what happens here?
+			console.log(y);      // 15
+			console.log(i);      // 6
+			console.log(inFor);  // 5
+
+			function nested() {
+				console.log('nested function : ' + x);
+			}
+			nested();
+		}
+
+		// call the function defined above
+		scopeTest();
+		/* 
+		this will be fail. javascript uses function scope
+		function anotherScopeTest() {
+			alert(inFor);
+		}
+		anotherScopeTest();
+		*/
+
+		 // javascript hoisting
+		 var testVar = "I'm a global";
+		function hoisting() {
+			console.log(testVar);  // <- undefined
+			var testVar = "I'm a local";
+			console.log(testVar);
+		}
+
+		hoisting();
+		
+		function circumference(radius) {
+			function diameter(rad) { return 2*rad; }
+			return Math.PI * diameter(radius);
+		}
+		
+		console.log('circumference: ' + circumference(3));
+		// minification - reduce unnecessary characters to improve performance
+		// obfuscation - hide your original source code
+		// falsy value - false, "", null, undefined, NaN (Not a Number)
+		// $("#h1").text("Change text").css("color", "red");
+		
+		// in javascript, string is not an object, but wrapper object will be created
+		var str = "programmer interview";
+		var letter = str.charAt(0);
+		console.log(letter);
+	});
+</script>
+</head>
+<body>
+    <h1>header</h1>
+</body>
+</html>
