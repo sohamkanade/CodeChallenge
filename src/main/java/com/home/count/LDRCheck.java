@@ -20,7 +20,10 @@ public class LDRCheck {
 			jobTitles = lines.filter(line -> line.startsWith("LDR"))	// get LDR line
 			.map(line -> {
 				String[] elements = line.split(",");	// split by comma
-				return new SimpleEntry<String, String>(elements[3], String.join(":", elements[1], elements[2]) );	// key is 4th element and value is joining 2nd (jobId) and 3rd (jobTitle).
+				if(elements[3].isEmpty()) {
+					elements[3] ="Y";
+				}
+				return new SimpleEntry<String, String>(elements[3], String.join(":", elements[1], elements[2]) );	// key is 4th element and value is joining 2nd (jobId) and 3rd (jobTitle), so actually coss mapping here.
 			})
 			.collect(Collectors.groupingBy(Map.Entry::getValue, Collectors.mapping(Map.Entry::getKey, Collectors.toSet())))
 			.entrySet()
