@@ -1,7 +1,9 @@
 package com.leetcode.dp;
 
+import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Set;
 
 public class WordBreak {
@@ -61,15 +63,15 @@ public class WordBreak {
 		return false;
 	}
 
-	public void wordBreak3(String input, Node node) {
+	public void wordBreak3(String input, Set<String> dict, String temp, List<String> results) {
 		int size = input.length();
-		if(size == 0) return;
+		if(size == 0) {
+			results.add(temp.trim());
+		}
 		for(int i=1; i <=size; i++) {
 			String prefix = input.substring(0, i);
-			if(dictionaryContains( input.substring(0, i))  ) {
-				Node child = new Node(prefix);
-				node.getChildren().add(child);
-				wordBreak3(input.substring(i, size), child);
+			if(dict.contains(prefix)  ) {
+				wordBreak3(input.substring(i, size), dict, String.join(" ", temp, prefix), results);
 			}
 		}
 	}
@@ -92,15 +94,9 @@ public class WordBreak {
 		System.out.println( wb.wordBreak2("samsungandmango") );
 		System.out.println( wb.wordBreak2("samsungandmangok") );
 
-		Node head = new Node("");
-		wb.wordBreak3("ilikeicecreamandmango", head);
-		System.out.println();
-		//         i
-		//         like      
-		//  i      ice    icecream
-		//         cream        and
-		//         and          man mango
-		//         man mango    go
-		//         go
+		Set<String> dict = new HashSet<>(Arrays.asList("mobile","samsung","sam","sung","man","mango", "icecream","and","go","i","like","ice","cream"));
+		List<String> results = new ArrayList<>();
+		wb.wordBreak3("ilikeicecreamandmango", dict, "", results);
+		results.forEach(System.out::println);
 	}
 }
