@@ -35,6 +35,7 @@ public class LevelOrderTraverse {
 			if(0 == currentLevel) {
 				sb.append("\n");
 				currentLevel = nextLevel;
+				nextLevel = 0;
 			}
 		}
 		System.out.println(sb.toString());
@@ -46,6 +47,18 @@ public class LevelOrderTraverse {
 		Node n20 = new Node(20);
 		Node n15 = new Node(15);
 		Node n7 = new Node(7);
+		Node n8 = new Node(8);
+		Node n1 = new Node(1);
+		Node n4 = new Node(4);
+		Node n2 = new Node(2);
+		Node n5 = new Node(5);
+		Node n6 = new Node(6);
+		n8.left = n1;
+		n8.right = n4;
+		n7.right = n8;
+		n7.left = n6;
+		n15.left = n2;
+		n15.right = n5;
 		n20.left = n15;
 		n20.right = n7;
 		n3.left = n9;
