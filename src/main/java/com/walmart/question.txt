@@ -1,0 +1,22 @@
+Async communication
+-. it can go for receipt url to retrieve result later
+
+
+String is immutable class which is final class so cannot extends
+
+
+equals and hashCode
+1) If two objects are equal by equals() method then there hashcode returned by hashCode() method must be same.
+
+2) Whenever hashCode() mehtod is invoked on the same object more than once within single execution of application, hashCode() must return same integer provided no information or fields used in equals and hashcode is modified. This integer is not required to be same during multiple execution of application though.
+
+3) If two objects are not equals by equals() method it is not require that there hashcode must be different. Though it’s always good practice to return different hashCode for unequal object. Different hashCode for distinct object can improve performance of hashmap or hashtable by reducing collision.
+
+
+Read more: http://javarevisited.blogspot.com/2011/10/override-hashcode-in-java-example.html#ixzz3tgA5PHoM
+
+you want to use your object as key not the value in the HashMap. 
+So you have to override both the methods hashCode() and equals(). 
+However it is left to the reader to create the object and test the feature in a Map. 
+
+If want to make your own immutable object , it will be wiser to override the equals() and hashCode() methods.
