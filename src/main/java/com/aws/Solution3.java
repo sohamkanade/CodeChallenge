@@ -43,7 +43,7 @@ public class Solution3 {
 					if(candidateConstraintPairs[i][1].equalsIgnoreCase(donutConstraintPairs[j][1])) {
 						// found match
 						result[resultRow][1] = donutConstraintPairs[j][0];
-						break;
+						break; // maybe shouldn't break and keep adding match?
 					}
 				}
 				resultRow++;
