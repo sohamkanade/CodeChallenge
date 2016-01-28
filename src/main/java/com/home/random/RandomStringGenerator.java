@@ -10,6 +10,8 @@ public class RandomStringGenerator {
 	public static void main(String[] args) throws Exception {
 		SecureRandom random = new SecureRandom();
 
+//		this is generate 130 bits and assign 5bit for each character, so 26 characters total
+//		and we want to have only 16 character to build up mask/secretKey, so get substring
 //		byte[] keyValue = new BigInteger(130, random).toString(32).substring(0, 16).getBytes();
 //		System.out.println( keyValue.toString() );
 		
