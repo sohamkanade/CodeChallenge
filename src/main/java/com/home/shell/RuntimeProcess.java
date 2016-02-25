@@ -63,10 +63,14 @@ public class RuntimeProcess {
 	}
 
 	public void run(String command) {
+		Process process = null;
 		try {
-			Runtime.getRuntime().exec(command);
-		} catch (IOException e) {
+			process = Runtime.getRuntime().exec(command);
+			process.waitFor(3, TimeUnit.SECONDS);
+		} catch (Exception e) {
 			System.out.println(e.getMessage());
+		} finally {
+			process.destroy();
 		}
 	}
 
