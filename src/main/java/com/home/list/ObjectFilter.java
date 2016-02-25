@@ -3,12 +3,12 @@ package com.home.list;
 import java.util.ArrayList;
 import java.util.List;
 
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 
 public class ObjectFilter {
 
 	public String getValidUrl(List<Result> results) {
-		return results.stream().filter(result -> !StringUtils.isEmpty(result.getUrl())).map(Result::getUrl).findFirst().orElse("");
+		return results.stream().filter(result -> StringUtils.isNotEmpty(result.getUrl())).map(Result::getUrl).findFirst().orElse("");
 	}
 
 	public static void main(String[] args) {

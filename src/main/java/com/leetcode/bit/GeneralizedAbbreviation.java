@@ -57,6 +57,7 @@ word
 			if(num != 0) { 
 				sb.append(num);
 			}
+			System.out.println(sb.toString());
 			res.add(sb.toString());
 		} else {
 			dfs(res, sb, c, i + 1, num + 1);				// abbr c[i]
