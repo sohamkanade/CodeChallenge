@@ -62,18 +62,12 @@ public class RuntimeProcess {
 		return response;
 	}
 
-	public void runIndedendentProcess(String command) {
+	public void run(String command) {
 		try {
 			Runtime.getRuntime().exec(command);
 		} catch (IOException e) {
 			System.out.println(e.getMessage());
 		}
-//		try {
-//			new ProcessBuilder(command).start();
-//		} catch (IOException e) {
-//			System.out.println(e.getMessage());
-//		}
-
 	}
 
 	/*
@@ -86,6 +80,6 @@ public class RuntimeProcess {
 		RuntimeProcess rp = new RuntimeProcess();
 //		rp.runAsyncWithTimeout("./current_time.sh");
 //		rp.runAsyncWithTimeout("./current_time2.sh");
-		rp.runIndedendentProcess("sh ./current_time.sh &");
+		rp.run("cmd /c start current_time.bat");
 	}
 }
