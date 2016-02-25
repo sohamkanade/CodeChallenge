@@ -62,14 +62,10 @@ public class RuntimeProcess {
 	}
 
 	public void run(String command) {
-		Process process = null;
 		try {
-			process = Runtime.getRuntime().exec(command);
-			process.waitFor(3, TimeUnit.SECONDS);
+			Runtime.getRuntime().exec(command);
 		} catch (Exception e) {
 			System.out.println(e.getMessage());
-		} finally {
-			process.destroy();
 		}
 	}
 
@@ -83,6 +79,7 @@ public class RuntimeProcess {
 		RuntimeProcess rp = new RuntimeProcess();
 //		rp.runAsyncWithTimeout("./current_time.sh");
 //		rp.runAsyncWithTimeout("./current_time2.sh");
-		rp.run("cmd /c start current_time.bat");
+//		rp.run("cmd /c start current_time.bat");
+		rp.run("xterm -e ./current_time.sh &");
 	}
 }
