@@ -80,6 +80,7 @@ public class RuntimeProcess {
 //		rp.runAsyncWithTimeout("./current_time.sh");
 //		rp.runAsyncWithTimeout("./current_time2.sh");
 //		rp.run("cmd /c start current_time.bat");
-		rp.run("xterm -e ./current_time.sh &");
+//		rp.run("xterm -e ./current_time.sh &");
+		rp.run("/opt/X11/bin/xterm -e ./current_time.sh &");
 	}
 }

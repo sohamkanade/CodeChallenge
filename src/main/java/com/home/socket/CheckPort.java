@@ -16,12 +16,12 @@ public class CheckPort {
 		CheckPort cp = new CheckPort();
 		boolean isServerRunning = false;
 		try {
-			for(int i = 0; i < 5; i++) {
+			for(int i = 0; i < 10; i++) {
 				if(cp.isPortListening("localhost", 9292)) {
 					isServerRunning = true;
 					break;
 				}
-				Thread.sleep(10000);  // wait 10 seconds
+				Thread.sleep(5000);  // wait 10 seconds
 			}
 		} catch(Exception e) {
 			System.out.println(e.getMessage());
