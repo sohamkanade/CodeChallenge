@@ -20,3 +20,10 @@ So you have to override both the methods hashCode() and equals().
 However it is left to the reader to create the object and test the feature in a Map. 
 
 If want to make your own immutable object , it will be wiser to override the equals() and hashCode() methods.
+
+
+if you override equals, you must override hashCode.
+hashCode must generate equal values for equal objects.
+equals and hashCode must depend on the same set of fields.
+You must use the same set of fields in both of these methods. 
+You are not required to use all fields. For example, a calculated field that depends on others should very likely be omitted from equals and hashCode.
