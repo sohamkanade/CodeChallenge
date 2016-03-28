@@ -33,7 +33,7 @@ public class Solution1 {
 		Map<Integer, Integer> sorted = sort(freqMap);
 		for (Map.Entry<Integer, Integer> entry : sorted.entrySet()) {
 			for(int i = 1; i <= entry.getValue(); i++) {
-			   System.out.println(entry.getKey());
+				System.out.println(entry.getKey());
 			}
 		}
 	}
