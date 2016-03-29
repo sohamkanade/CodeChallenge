@@ -7,14 +7,14 @@ public class Singleton {
 	/** 
 	 * Initializes singleton. 
 	 * 
-	 * {@link SingletonHolder} is loaded on the first execution of {@link Singleton#getInstance()} or the first access to 
-	 * {@link SingletonHolder#INSTANCE}, not before. 
+	 * {@link LazySingletonHolder} is loaded on the first execution of {@link Singleton#getInstance()} or the first access to 
+	 * {@link LazySingletonHolder#INSTANCE}, not before. 
 	 */ 
-	private static class SingletonHolder { 
+	private static class LazySingletonHolder { 
 		private static final Singleton INSTANCE = new Singleton(); 
 	}
 
 	public static Singleton getInstance() {
-		return SingletonHolder.INSTANCE;
+		return LazySingletonHolder.INSTANCE;
 	}
 }
