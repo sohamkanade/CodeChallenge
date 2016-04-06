@@ -17,4 +17,12 @@ public class Singleton {
 	public static Singleton getInstance() {
 		return LazySingletonHolder.INSTANCE;
 	}
+
+	public static void main(String[] args) {
+		System.out.println(Singleton.getInstance().toString());
+		
+		System.out.println(Singleton.getInstance().toString());
+		
+		System.out.println(Singleton.getInstance().toString());
+	}
 }

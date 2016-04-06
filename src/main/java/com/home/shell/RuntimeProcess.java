@@ -31,6 +31,20 @@ public class RuntimeProcess {
 		return line;
 	}
 
+	public Process execute(final String command) {
+		Process process = null;
+		try {
+			Runtime runtime = Runtime.getRuntime();
+			process = runtime.exec(command);
+		} catch(Exception e) {
+			if(null != process) {
+				process.destroy();
+			}
+			throw new RuntimeException(e);
+		}
+		return process;
+	}
+
 	public String runAsyncWithTimeout(final String command) {
 		ExecutorService executor = null;
 		String response = null;
