@@ -2,19 +2,23 @@ package com.aws.session3;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Set;
 
 public class HashMapImpl {
 
-	List<List<Node>> array = new ArrayList<List<Node>>(50);
+	List<Set<Node>> array = new ArrayList<Set<Node>>(50);
 
 	public void put(String key, String value) {
-		array.get(key.hashCode()%array.size()).add(new Node(key,value));
+		array.get(key.hashCode() % array.size()).add(new Node(key,value));
 	}
 
 	public String get(String key) {
-		return array.get(key.hashCode()%array.size()).stream()
-											.filter(node -> node.getKey().equals(key))
-											.map(Node::getValue).findFirst().get();
+		return array.get(key.hashCode() % array.size())
+					.stream()
+					.filter(node -> node.getKey().equals(key))
+					.map(Node::getValue)
+					.findFirst()
+					.get();
 	}
 
 	public class Node {
