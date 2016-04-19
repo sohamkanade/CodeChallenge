@@ -1,32 +1,24 @@
 package com.aws.session1;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.LinkedList;
+import java.util.Queue;
 
 public class BinaryTreeSerialization {
 
-	List<Integer> list = new ArrayList<>();
+	Queue<Integer> queue = new LinkedList<>();
 
 	public void serialization(BinaryTreeNode node) {
 		if(null == node) {
+			queue.add(null);
 			return;
 		}
-		list.add(node.value);
-		if(null == node.left) {
-			list.add(null);
-		} else {
-			serialization(node.left);
-		}
-		if(null == node.right) {
-			list.add(null);
-		} else {
-			serialization(node.right);
-		}
+		queue.add(node.value);
+		serialization(node.left);
+		serialization(node.right);
 	}
 
 	public BinaryTreeNode deserialization() {
-		Integer value = list.get(0);
-		list.remove(0);
+		Integer value = queue.poll();
 		if(null != value) {
 			BinaryTreeNode child = new BinaryTreeNode(value);
 			child.left = deserialization();
