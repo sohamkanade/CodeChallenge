@@ -1,7 +1,7 @@
-package com.home.format;
+package com.home.format.csv;
 
-import static com.home.format.EmployeeCsvUtils.read;
-import static com.home.format.EmployeeCsvUtils.write;
+import static com.home.format.csv.EmployeeCsvUtils.read;
+import static com.home.format.csv.EmployeeCsvUtils.write;
 
 import java.io.File;
 import java.math.BigDecimal;
