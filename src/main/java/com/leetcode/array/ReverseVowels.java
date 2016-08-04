@@ -43,7 +43,7 @@ public class ReverseVowels {
 
 	public static void main(String[] args) {
 		ReverseVowels rv = new ReverseVowels();
-		System.out.println( rv.reverseVowels("sweetcode") );
+		System.out.println( rv.reverseVowels("SWEETcode") );
 		System.out.println( rv.reverseVowels("hello") );
 	}
 }
