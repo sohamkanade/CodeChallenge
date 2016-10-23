@@ -9,9 +9,9 @@ public class JdbcTest {
 		String password = "new123";
 
 		SaPasswordDAO dao = new SaPasswordDAO(jdbcUrl, username, password);
-		dao.changePassword("pass123");
+		dao.changePassword("new123");
 
-		PropertyDAO pdao = new PropertyDAO(jdbcUrl, username, "pass123", new PropertyMapper());
+		PropertyDAO pdao = new PropertyDAO(jdbcUrl, username, "new123", new PropertyMapper());
 		List<Property> properties = pdao.getProperties();
 		properties.stream().forEach(property -> {
 			System.out.println(String.join(", ", property.getName(), property.getData(), property.getDescription()));
