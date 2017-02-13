@@ -7,7 +7,7 @@ import java.util.List;
 
 /**
  * 
- * select name from test.country where name = 'united states' union SELECT * from (select name FROM test.country where name != 'united states' order by name) b;
+ * select name from Country where name = 'united states' union all SELECT * from (select name FROM country where name != 'united states' order by name) b;
  * 
  * @author spark
  *
@@ -66,6 +66,16 @@ public class SortCountry {
 		for(Country country: countries) {
 			System.out.println(country.getName());
 		}
+	}
+	
+	public class CountryComparator implements Comparator<Country> {
+
+		@Override
+		public int compare(Country c1, Country c2) {
+			// TODO Auto-generated method stub
+			return 0;
+		}
+		
 	}
 
 	public static void main(String[] args) {

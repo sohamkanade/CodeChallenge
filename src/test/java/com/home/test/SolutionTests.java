@@ -2,12 +2,12 @@ package com.home.test;
 
 import static org.junit.Assert.assertTrue;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
-
-import com.home.test.Solution;
-import com.home.test.Solution2;
 
 public class SolutionTests {
 
@@ -56,6 +56,12 @@ public class SolutionTests {
 		assertTrue (result == 1);
 		result = solution2.calculate("1-1+1");
 		assertTrue (result == 1);
+	}
+
+	@Test
+	public void testArrayList() {
+		List<Integer> list = new ArrayList<>();
+		list.addAll(null);
 	}
 
 }

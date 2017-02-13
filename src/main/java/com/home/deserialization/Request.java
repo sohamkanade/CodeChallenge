@@ -26,5 +26,4 @@ public class Request {
 			this.type = type;
 		}
 
-		
 }
