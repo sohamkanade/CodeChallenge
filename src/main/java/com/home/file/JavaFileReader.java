@@ -1,4 +1,4 @@
-package com.homefile;
+package com.home.file;
 
 import java.io.IOException;
 import java.nio.charset.Charset;
